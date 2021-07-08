@@ -7,7 +7,7 @@ function Footer() {
       <div className="footer-copyright">
         <p>Copyright <i className="fa fa-copyright" aria-hidden="true"></i> 2021</p>
         <p>
-          Made with <i className="fas fa-heart"></i> &amp; <i class="fas fa-coffee"></i> by Kristina Zhizherina
+          Made with <i className="fas fa-heart"></i> &amp; <i className="fas fa-coffee"></i> by Kristina Zhizherina
         </p>
       </div>
       <div className="footer-social-links">

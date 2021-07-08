@@ -60,3 +60,17 @@ $light-blue: #4da0db;
     margin: 0 3rem;
   }
 }
+
+@media only screen and (max-width: 540px) {
+  .footer-container {
+    padding: 2em 2em;
+
+    p {
+      font-size: 12px;
+    }
+
+    a {
+      font-size: 1.3em;
+    }
+  }
+}
