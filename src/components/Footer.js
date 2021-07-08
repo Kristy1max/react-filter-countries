@@ -13,12 +13,12 @@ function Footer() {
       <div className="footer-social-links">
         <p> Follow me on </p>
         <ul>
-          <li><a href="https://www.linkedin.com/in/kristina-zhizherina-8392631a5/" target="_blank" rel="noreferrer"><i className="fab fa-linkedin"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/kristina-zhizherina-8392631a5" target="_blank" rel="noreferrer"><i className="fab fa-linkedin"></i></a></li>
           <li><a href="https://github.com/Kristy1max" target="_blank" rel="noreferrer" ><i className="fab fa-github-alt"></i></a></li>
-          <li><a href="https://www.instagram.com/kristy.kz/" target="_blank" rel="noreferrer"><i className="fab fa-instagram"></i></a></li>
+          <li><a href="https://www.instagram.com/kristy.kz" target="_blank" rel="noreferrer"><i className="fab fa-instagram"></i></a></li>
         </ul> 
       </div>
-    </section> // #footer
+    </section>
   );
 }
 

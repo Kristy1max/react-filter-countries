@@ -1,5 +1,6 @@
 $default-blue: #043a60;
 $default-white: #ffffff;
+$default-yellow: #ffc801;
 
 * {
   margin: 0;
@@ -29,6 +30,7 @@ h1, h2 {
   top: 0;
   left: 0;
   right: 0;
+  padding: 0 5em;
   z-index: 200;
   height: 70px;
   width: 100%;
@@ -41,9 +43,8 @@ h1, h2 {
 .logo {
   width: 150px;
   height: 60px;
-  padding: 15px 0;
   display: inline-block;
-  margin-left: 3em;
+  // margin-left: 2em;
   outline: none;
 }
 
@@ -64,7 +65,7 @@ h1, h2 {
   margin-top: 4px;
   position: absolute;
   height: 4px;
-  background-color: #ffc801;
+  background-color: $default-yellow;
 }
 
 .search-form-margin {
