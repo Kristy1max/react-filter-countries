@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Filter = () => {  
-  window.addEventListener('DOMContentLoaded', () => {
+  document.onreadystatechange = () => {
     const search = document.getElementById('search');
 
     search.addEventListener('input', (e) => {
@@ -16,7 +16,7 @@ const Filter = () => {
         }
       })
     })
-  })
+  }
 
   return (
     <>

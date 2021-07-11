@@ -8,7 +8,7 @@ const Countries = () => {
   const fetchCountryData = async() => {
     const response = await fetch(url);
     const countries = await response.json();
-    setCountries(countries);
+    setCountries(countries.sort((a, b) => a.name.localeCompare(b.name)));
   }
   
   useEffect(() => {
