@@ -27,7 +27,7 @@ function Countries() {
     <h2 className="text-center font-weight-bold main-h2">Supported Countries</h2>
     <div className="underline"></div>
       <section className="container text-center my-5">
-          <form className="form-inline search-form-margin">
+        <form className="form-inline search-form-margin">
           <input
             className='form-control'
             id='search'

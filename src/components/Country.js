@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Country = ({ countryKey, name }) => {
-
   return (
     <>
       <article className="flag-tile col-12 col-sm-4 col-md-3 col-lg-3 mx-2 my-2">
