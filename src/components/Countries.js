@@ -1,40 +1,56 @@
 import React, { useState, useEffect } from 'react'
+import axios from 'axios';
+import Country from './Country';
 
-const url = 'https://api.workgenius.com/order/supported-countries';
+function Countries() {
 
-const Countries = () => {
-  const [countries, setCountries] = useState([]);
+  const [ countries, setCountries ] = useState([]);
+  const [search, setSearch] = useState('');
 
-  const fetchCountryData = async() => {
-    const response = await fetch(url);
-    const countries = await response.json();
-    setCountries(countries.sort((a, b) => a.name.localeCompare(b.name)));
-  }
-  
   useEffect(() => {
-    fetchCountryData()
-  }, [])
+    axios.get('https://api.workgenius.com/order/supported-countries')
+    .then(res => {
+      setCountries(res.data.sort((a, b) => a.name.localeCompare(b.name)))
+    }).catch(error => console.log(error))
+  }, []);
+
+  const handleChange = e => {
+    setSearch(e.target.value)
+  }
+
+  const filteredCountries = countries.filter(country => 
+      country.name.toLowerCase().includes(search.toLocaleLowerCase())
+    )
 
   return (
     <>
-    <section className="container text-center">
-      <div className="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-4 countries-row">
-        {countries.map((country) => {
-          const { key, name } = country;
+    <h2 className="text-center font-weight-bold main-h2">Supported Countries</h2>
+    <div className="underline"></div>
+      <section className="container text-center my-5">
+          <form className="form-inline search-form-margin">
+          <input
+            className='form-control'
+            id='search'
+            type='text'
+            name='search' 
+            placeholder='Search for a country...'
+            onChange={handleChange}
+          />
+        </form>
+      </section>
 
-          return (
-            <article className="flag-tile col-12 col-sm-4 col-md-3 col-lg-3 mx-2 my-2" key={key}>
-              <div className="inner-flag-tile mt-4">
-                <img className="country-flag-img" src={`https://www.countryflags.io/${key}/flat/64.png`} alt={name} />  
-              <h4 className='country-name'>{name}</h4>
-              </div>
-            </article>
-          )
-        })}
-      </div>
-    </section>
+      <section className="container text-center">
+        <div className="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-4 countries-row">
+
+          {filteredCountries.map(country => {
+            return (
+              <Country key={country.key} countryKey={country.key} name={country.name}/>
+            )
+          })}
+        </div>
+      </section>
     </>
   )
 }
 
-export default Countries
+export default Countries;
